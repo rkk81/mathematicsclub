@@ -1,46 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('signupForm');
-    if (!form) {
-        console.error('Signup form not found!');
+    const errorMessage = document.getElementById('errorMessage');
+    const successMessage = document.getElementById('successMessage');
+
+    if (!form || !errorMessage || !successMessage) {
+        console.error('Critical signup form elements not found!');
         return;
+    }
+
+    // Enhanced logging function
+    function logSignupAttempt(status, details) {
+        console.log(JSON.stringify({
+            timestamp: new Date().toISOString(),
+            status: status,
+            details: details
+        }));
     }
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-        const errorMessage = document.getElementById('errorMessage');
-        const successMessage = document.getElementById('successMessage');
-
-        console.log('Form submitted with:', { name, email });
-
         // Reset messages
+        errorMessage.textContent = '';
         errorMessage.style.display = 'none';
+        successMessage.textContent = '';
         successMessage.style.display = 'none';
 
         try {
-            // Enhanced validation
-            if (!name || !email || !password || !confirmPassword) {
-                throw new Error('Please fill in all fields');
-            }
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
 
-            if (password !== confirmPassword) {
-                throw new Error('Passwords do not match');
-            }
+            // Comprehensive validation
+            const validationErrors = [];
 
+            if (!name) validationErrors.push('Name is required');
+            if (!email) validationErrors.push('Email is required');
+            
             // Enhanced email validation
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!emailRegex.test(email)) {
-                throw new Error('Please enter a valid email address');
+            if (email && !emailRegex.test(email)) {
+                validationErrors.push('Invalid email format');
             }
 
-            // Enhanced password strength validation
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-            if (!passwordRegex.test(password)) {
-                throw new Error('Password must be at least 8 characters long, contain uppercase, lowercase, number, and special character');
+            if (!password) validationErrors.push('Password is required');
+            if (!confirmPassword) validationErrors.push('Confirm Password is required');
+            
+            if (password !== confirmPassword) {
+                validationErrors.push('Passwords do not match');
+            }
+
+            // Check for validation errors
+            if (validationErrors.length > 0) {
+                throw new Error(validationErrors.join('. '));
             }
 
             // Initialize users array
@@ -49,12 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if email already exists
             const emailExists = users.some(user => user && user.email === email);
             if (emailExists) {
+                logSignupAttempt('failed', { reason: 'Email already registered', email });
                 throw new Error('Email already registered');
             }
 
-            // Create secure user object (avoid storing plain text password)
+            // Create secure user object 
             const newUser = {
-                id: crypto.randomUUID(), // More secure unique ID
+                id: crypto.randomUUID(), 
                 name: name,
                 email: email,
                 passwordHash: btoa(password), // Basic encoding (not secure encryption)
@@ -64,6 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add user to storage
             users.push(newUser);
             localStorage.setItem('users', JSON.stringify(users));
+
+            // Log successful signup
+            logSignupAttempt('success', { email });
 
             // Show success message
             successMessage.textContent = 'Account created successfully! Redirecting to login...';
@@ -81,6 +98,12 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Signup error:', error);
             errorMessage.textContent = error.message || 'An error occurred. Please try again.';
             errorMessage.style.display = 'block';
+            
+            // Log error details
+            logSignupAttempt('failed', { 
+                message: error.message,
+                stack: error.stack 
+            });
         }
     });
 });
