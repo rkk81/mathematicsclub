@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mathematics Club</title>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+                <button type="submit">Login</button>
+            </form>
+            <p class="auth-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if (username && password) {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', username);
+                
+                // Redirect to stored page or home page
+                const redirectUrl = localStorage.getItem('redirectAfterLogin') || '../index.html';
+                localStorage.removeItem('redirectAfterLogin'); // Clear stored URL
+                window.location.href = redirectUrl;
+            } else {
+                document.getElementById('errorMessage').textContent = 'Please enter both email and password';
+            }
+        });
+    </script>
+</body>
+</html>

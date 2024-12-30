@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Olympiad Topics</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/questions.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="https://i.ibb.co/MSTwCk9/images-1.jpg" class="logo">Mathematics Club</a>
+                <ul>
+                    <li><a href="../index.html" id="home-link" class="active">Home</a></li>
+                    <li><a href="#ioqm">IOQM</a></li>
+                    <li><a href="#number-theory">Number Theory</a></li>
+                    <li><a href="#combinatorics">Combinatorics</a></li>
+                    <li><a href="#geometry">Geometry</a></li>
+                    <li><a href="#algebra">Algebra</a></li>
+                    <li><a href="#advanced-problems">Advanced Problems</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="ioqm" class="active">
+            <div class="container">
+                <h2>IOQM Challenges <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Number Theory Problem</h3>
+                        <div class="question">Find the remainder when 7^2024 is divided by 13.</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 4</p>
+                                <div class="steps">
+                                    <p>1. Use Euler's theorem</p>
+                                    <p>2. φ(13) = 12</p>
+                                    <p>3. 7^12 ≡ 1 (mod 13)</p>
+                                    <p>4. 7^2024 = 7^(168 * 12 + 8)</p>
+                                    <p>5. 7^8 ≡ 4 (mod 13)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Algebraic Problem</h3>
+                        <div class="question">If x + y = 10 and x^2 + y^2 = 58, find xy.</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 21</p>
+                                <div class="steps">
+                                    <p>1. (x + y)^2 = x^2 + 2xy + y^2</p>
+                                    <p>2. 100 = 58 + 2xy</p>
+                                    <p>3. 2xy = 42</p>
+                                    <p>4. xy = 21</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Combinatorics Problem</h3>
+                        <div class="question">How many distinct ways can the letters of MATHEMATICS be arranged?</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 4,989,600</p>
+                                <div class="steps">
+                                    <p>1. Total letters: 11</p>
+                                    <p>2. M (2), A (2), T (2), H (1), E (1), I (1), C (1), S (1)</p>
+                                    <p>3. 11! / (2! * 2! * 2!)</p>
+                                    <p>4. 39,916,800 / 8 = 4,989,600</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Geometry Problem</h3>
+                        <div class="question">In triangle ABC, AB = 6, BC = 8, AC = 10. Find the area.</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 24 square units</p>
+                                <div class="steps">
+                                    <p>1. Use Heron's formula</p>
+                                    <p>2. s = (6 + 8 + 10) / 2 = 12</p>
+                                    <p>3. Area = √(s(s-a)(s-b)(s-c))</p>
+                                    <p>4. √(12(12-6)(12-8)(12-10)) = 24</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Probability Problem</h3>
+                        <div class="question">A bag contains 4 red, 5 green, 6 blue balls. Probability of drawing red or blue?</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 10/15 or 2/3</p>
+                                <div class="steps">
+                                    <p>1. Total balls: 15</p>
+                                    <p>2. Red balls: 4</p>
+                                    <p>3. Blue balls: 6</p>
+                                    <p>4. (4 + 6) / 15 = 10/15 = 2/3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Advanced Number Theory</h3>
+                        <div class="question">Find the last two digits of 7^100.</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 01</p>
+                                <div class="steps">
+                                    <p>1. Use modular arithmetic</p>
+                                    <p>2. φ(100) = 40</p>
+                                    <p>3. 7^40 ≡ 1 (mod 100)</p>
+                                    <p>4. 7^100 = 7^(2*40 + 20)</p>
+                                    <p>5. 7^20 ≡ 01 (mod 100)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="number-theory">
+            <div class="container">
+                <h2>Number Theory Challenges <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Divisibility Problem</h3>
+                        <div class="question">Is 2^10 + 1 divisible by 3?</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: No</p>
+                                <div class="steps">
+                                    <p>1. 2^10 = 1024</p>
+                                    <p>2. 1024 + 1 = 1025</p>
+                                    <p>3. 1025 ÷ 3 = 341 remainder 2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/content-gate.js"></script>
+    <script src="../js/questions.js" type="module"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
+            const sections = document.querySelectorAll('main section');
+
+            // Remove default active class from home link
+            document.getElementById('home-link').classList.remove('active');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+
+                    // Update active link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // Show/hide sections
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Initial setup: show first section if no section is active
+            if (!document.querySelector('main section.active')) {
+                const firstSection = document.querySelector('main section');
+                if (firstSection) {
+                    firstSection.classList.add('active');
+                    const correspondingLink = document.querySelector(`nav ul li a[href="#${firstSection.id}"]`);
+                    if (correspondingLink) {
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

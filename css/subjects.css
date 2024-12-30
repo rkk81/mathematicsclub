@@ -1,0 +1,157 @@
+/* Subjects Section Styles */
+.subjects {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--card-bg) 100%);
+}
+
+.subjects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.subject-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.subject-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+    pointer-events: none;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.subject-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.subject-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.subject-card:hover h3::after {
+    width: 100px;
+}
+
+.subject-card a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.subject-card p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.subject-card .icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover .icon {
+    opacity: 0.3;
+    transform: scale(1.2);
+}
+
+.subject-card .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.subject-card .progress-bar {
+    height: 100%;
+    background: var(--accent-color);
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.subject-card .topics {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.subject-card.expanded .topics {
+    max-height: 200px;
+    margin-top: 1rem;
+}
+
+.subject-card .topics ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subject-card .topics li {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .subject-card {
+        background: var(--dark-bg);
+    }
+
+    .subject-card::before {
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05));
+    }
+
+    .subject-card .progress {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subjects-list {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .subject-card {
+        padding: 1.5rem;
+    }
+}

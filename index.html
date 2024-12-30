@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Club - 3D Learning Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/subjects.css">
+</head>
+<body>
+    <div class="loader-3d"></div>
+
+    <div class="logo-container floating">
+        <img src="https://i.ibb.co/MSTwCk9/images-1.jpg" alt="Math Club Logo" class="logo depth-effect" />
+    </div>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="floating">Mathematics Club</h1>
+            <nav class="nav-3d">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="pages/test.html">Test</a></li>
+                    <li><a href="pages/olympaid.html" id="olympaid">Olympaid Questions</a></li>
+                </ul>
+                <div class="nav-links">
+                    <span id="userInfo" style="display: none;"></span>
+                    <a href="pages/login.html" id="loginButton">Login</a>
+                    <a href="pages/signup.html" id="signupButton">Sign Up</a>
+                    <a href="#" id="logoutButton" style="display: none;">Logout</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-3d">
+        <div class="hero-background"></div>
+        <div class="hero-content container">
+            <h2 class="floating">Welcome to the Mathematics Club!</h2>
+            <p>Test your knowledge with random math questions from classes 9-12.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="card-3d">
+                <h2>About Our Club</h2>
+                <p>Welcome to the Mathematics Club! We help students from classes 9-12 enhance their math skills by offering engaging problems and topics for practice.</p>
+                <p>Join us and become a part of our learning community!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section id="subjects" class="subjects">
+        <div class="container">
+            <h2>Mathematics Topics</h2>
+            <div class="subjects-list">
+                <div class="subject-card" data-subject="algebra">
+                    <h3><a href="pages/algebra.html">Algebra</a></h3>
+                    <p>Master the fundamentals of algebra through interactive lessons and practice problems. Explore linear equations, polynomials, and advanced topics.</p>
+                </div>
+                <div class="subject-card" data-subject="geometry">
+                    <h3><a href="pages/geometry.html">Geometry</a></h3>
+                    <p>Discover the fascinating world of shapes, angles, and spatial relationships. Learn geometric proofs and real-world applications.</p>
+                </div>
+                <div class="subject-card" data-subject="calculus">
+                    <h3><a href="pages/calculus.html">Calculus</a></h3>
+                    <p>Explore the mathematics of change and motion. Master differentiation, integration, and their applications.</p>
+                </div>
+                <div class="subject-card" data-subject="statistics">
+                    <h3><a href="pages/statistics.html">Statistics</a></h3>
+                    <p>Learn to analyze data, understand probability, and make informed decisions using statistical methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- Footer Section -->
+    <footer class="footer-3d">
+        <div class="container footer-content">
+            <p>&copy; 2023 Mathematics Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/3d-effects.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/subjects.js"></script>
+    <script>
+        // Enhanced Authentication Management
+        function updateNavigation() {
+            const currentUser = JSON.parse(sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser') || 'null');
+            const loginButton = document.getElementById('loginButton');
+            const signupButton = document.getElementById('signupButton');
+            const logoutButton = document.getElementById('logoutButton');
+            const userInfo = document.getElementById('userInfo');
+
+            if (currentUser && currentUser.isLoggedIn) {
+                // Hide login/signup, show logout and user info
+                loginButton.style.display = 'none';
+                signupButton.style.display = 'none';
+                logoutButton.style.display = 'inline-block';
+                userInfo.style.display = 'inline-block';
+                userInfo.textContent = `Welcome, ${currentUser.name || 'User'}`;
+            } else {
+                // Show login/signup, hide logout and user info
+                loginButton.style.display = 'inline-block';
+                signupButton.style.display = 'inline-block';
+                logoutButton.style.display = 'none';
+                userInfo.style.display = 'none';
+                userInfo.textContent = '';
+            }
+        }
+
+        function logout() {
+            // Clear user session from both storage mechanisms
+            sessionStorage.removeItem('currentUser');
+            localStorage.removeItem('currentUser');
+            
+            // Reload the current page to reset UI
+            window.location.reload();
+        }
+
+        // Safe script loading with error handling
+        function loadScript(url, callback) {
+            const script = document.createElement('script');
+            script.src = url;
+            script.async = true;
+            script.onerror = () => {
+                console.error(`Failed to load script: ${url}`);
+                if (callback) callback(new Error('Script load error'));
+            };
+            if (callback) {
+                script.onload = () => callback(null);
+            }
+            document.head.appendChild(script);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update navigation on page load
+            updateNavigation();
+
+            // Attach logout handler
+            const logoutButton = document.getElementById('logoutButton');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', logout);
+            }
+
+            // Optional: Fallback script loading
+            if (typeof MathJax === 'undefined') {
+                loadScript('https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js', (err) => {
+                    if (err) {
+                        console.warn('MathJax failed to load. Some mathematical notation may not render correctly.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
