@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Topics</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/questions.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="https://i.ibb.co/MSTwCk9/images-1.jpg" class="logo">Mathematics Club</a>
+                <ul>
+                    <li><a href="../index.html" id="home-link" class="active">Home</a></li>
+                    <li><a href="#polynomials">Polynomials</a></li>
+                    <li><a href="#equations">Equations</a></li>
+                    <li><a href="#functions">Functions</a></li>
+                    <li><a href="#complex">Complex Numbers</a></li>
+                    <li><a href="#quadratic-equations">Quadratic Equations</a></li>
+                    <li><a href="#factoring">Factoring</a></li>
+                    <li><a href="#inequalities">Inequalities</a></li>
+                    <li><a href="#graphing">Graphing</a></li>
+                    <li><a href="#systems-of-equations">Systems of Equations</a></li>
+                    <li><a href="#higher-degree-polynomials">Higher-Degree Polynomials</a></li>
+                    <li><a href="#advanced-factoring">Advanced Factoring</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="polynomials" class="active">
+            <div class="container">
+                <h2>Polynomials and Factoring <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Factor the Expression</h3>
+                        <div class="question">x² + 5x + 6</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: (x + 2)(x + 3)</p>
+                                <div class="steps">
+                                    <p>1. Find factors of 6 that add to 5</p>
+                                    <p>2. 2 and 3 work because 2 + 3 = 5 and 2 × 3 = 6</p>
+                                    <p>3. Write as (x + 2)(x + 3)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Factor the Expression</h3>
+                        <div class="question">x² - 7x + 12</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: (x - 3)(x - 4)</p>
+                                <div class="steps">
+                                    <p>1. Find factors of 12 that add to -7</p>
+                                    <p>2. -3 and -4 work because -3 + (-4) = -7 and (-3)(-4) = 12</p>
+                                    <p>3. Write as (x - 3)(x - 4)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Factor the Expression</h3>
+                        <div class="question">2x³ - 8x² + 8x - 8</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 2(x - 2)(x² - 2x + 2)</p>
+                                <div class="steps">
+                                    <p>1. Factor out GCF: 2(x³ - 4x² + 4x - 4)</p>
+                                    <p>2. Group terms: 2(x² - 2x)(x - 2) - 2(2)(x - 2)</p>
+                                    <p>3. Factor out (x - 2): 2(x - 2)(x² - 2x + 2)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Factor Completely</h3>
+                        <div class="question">x⁴ - 16</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: (x + 2)(x - 2)(x² + 4)</p>
+                                <div class="steps">
+                                    <p>1. This is a difference of squares: x⁴ - 16 = (x² + 4)(x² - 4)</p>
+                                    <p>2. Factor x² - 4: (x² + 4)(x + 2)(x - 2)</p>
+                                    <p>3. x² + 4 cannot be factored further</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Factor the Expression</h3>
+                        <div class="question">x⁴ - 5x² + 4</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: (x² - 4)(x² - 1)</p>
+                                <div class="steps">
+                                    <p>1. Let u = x²</p>
+                                    <p>2. Expression becomes: u² - 5u + 4</p>
+                                    <p>3. Factor quadratic: (u - 4)(u - 1)</p>
+                                    <p>4. Substitute back: (x² - 4)(x² - 1)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Factor Completely</h3>
+                        <div class="question">x⁶ - 64</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: (x² + 4)(x² - 2x + 4)(x² + 2x + 4)</p>
+                                <div class="steps">
+                                    <p>1. x⁶ - 64 = (x² - 4)(x⁴ + 4x² + 16)</p>
+                                    <p>2. x² - 4 = (x + 2)(x - 2)</p>
+                                    <p>3. x⁴ + 4x² + 16 = (x² + 2x + 4)(x² - 2x + 4)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equations">
+            <div class="container">
+                <h2>Advanced Equations <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">x + 2 = 7</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 5</p>
+                                <div class="steps">
+                                    <p>1. Subtract 2 from both sides: x = 5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">2x - 3 = 11</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 7</p>
+                                <div class="steps">
+                                    <p>1. Add 3 to both sides: 2x = 14</p>
+                                    <p>2. Divide both sides by 2: x = 7</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">x² + 4x + 4 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = -2 (double root)</p>
+                                <div class="steps">
+                                    <p>1. Factor perfect square: (x + 2)² = 0</p>
+                                    <p>2. Take square root: x + 2 = 0</p>
+                                    <p>3. Solve: x = -2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">x² - 7x + 12 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 3 or x = 4</p>
+                                <div class="steps">
+                                    <p>1. Factor: (x - 3)(x - 4) = 0</p>
+                                    <p>2. Solve: x = 3 or x = 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">x³ - 6x² + 11x - 6 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 1, x = 2, or x = 3</p>
+                                <div class="steps">
+                                    <p>1. Factor: (x - 1)(x - 2)(x - 3) = 0</p>
+                                    <p>2. Solve: x = 1, x = 2, or x = 3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">x⁴ - 16 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = ±2 or x = ±2i</p>
+                                <div class="steps">
+                                    <p>1. Factor: (x² - 4)(x² + 4) = 0</p>
+                                    <p>2. Solve: x = ±2 or x = ±2i</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="functions">
+            <div class="container">
+                <h2>Function Analysis <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Find the Domain</h3>
+                        <div class="question">f(x) = 1/x</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x ≠ 0</p>
+                                <div class="steps">
+                                    <p>1. Function is undefined when denominator is 0</p>
+                                    <p>2. x ≠ 0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Find the Range</h3>
+                        <div class="question">f(x) = x²</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: y ≥ 0</p>
+                                <div class="steps">
+                                    <p>1. Function is always non-negative</p>
+                                    <p>2. y ≥ 0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Find the Inverse</h3>
+                        <div class="question">f(x) = (2x + 1)/(x - 3)</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: f⁻¹(x) = (3x + 1)/(2 - x)</p>
+                                <div class="steps">
+                                    <p>1. Replace f(x) with y</p>
+                                    <p>2. Swap x and y</p>
+                                    <p>3. Solve for y</p>
+                                    <p>4. Replace y with f⁻¹(x)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Find the Composition</h3>
+                        <div class="question">f(x) = x², g(x) = x + 1</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: (f ∘ g)(x) = (x + 1)²</p>
+                                <div class="steps">
+                                    <p>1. Replace x in f(x) with g(x)</p>
+                                    <p>2. (f ∘ g)(x) = (x + 1)²</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Find the Domain</h3>
+                        <div class="question">f(x) = ln(x² - 4) + √(9 - x²)</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: [-2, -√5) ∪ (√5, 3]</p>
+                                <div class="steps">
+                                    <p>1. For ln(x² - 4): x² - 4 > 0</p>
+                                    <p>2. For √(9 - x²): 9 - x² ≥ 0</p>
+                                    <p>3. Combine inequalities</p>
+                                    <p>4. Solve and find intersection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Find the Range</h3>
+                        <div class="question">f(x) = 1/(x² + 1)</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: y > 0</p>
+                                <div class="steps">
+                                    <p>1. Function is always positive</p>
+                                    <p>2. y > 0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="complex">
+            <div class="container">
+                <h2>Complex Numbers <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Add Complex Numbers</h3>
+                        <div class="question">(2 + 3i) + (4 - 2i)</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 6 + i</p>
+                                <div class="steps">
+                                    <p>1. Add real parts: 2 + 4 = 6</p>
+                                    <p>2. Add imaginary parts: 3i - 2i = i</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Multiply Complex Numbers</h3>
+                        <div class="question">(2 + 3i)(4 - 2i)</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 14 - 2i</p>
+                                <div class="steps">
+                                    <p>1. Multiply real parts: 2 × 4 = 8</p>
+                                    <p>2. Multiply imaginary parts: 3i × -2i = -6i² = 6</p>
+                                    <p>3. Combine: 8 + 6 + 12i - 6i = 14 - 2i</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve in Complex Form</h3>
+                        <div class="question">z⁴ + 16 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: ±2(1 ± i)</p>
+                                <div class="steps">
+                                    <p>1. z⁴ = -16</p>
+                                    <p>2. |z| = 2</p>
+                                    <p>3. arg(z) = ±45° or ±135°</p>
+                                    <p>4. Convert to rectangular form</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Find All Values</h3>
+                        <div class="question">(1 + i)^6</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 8(cos(3π/2) + i·sin(3π/2)) = -8i</p>
+                                <div class="steps">
+                                    <p>1. Convert to polar form</p>
+                                    <p>2. |1 + i| = √2</p>
+                                    <p>3. arg(1 + i) = π/4</p>
+                                    <p>4. Use DeMoivre's formula</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">z² + 4z + 13 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: z = -2 ± 3i</p>
+                                <div class="steps">
+                                    <p>1. Use quadratic formula with a = 1, b = 4, c = 13</p>
+                                    <p>2. z = [-4 ± √(16 - 52)]/2</p>
+                                    <p>3. z = -2 ± √(-36)/2</p>
+                                    <p>4. z = -2 ± 3i</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Find All Values</h3>
+                        <div class="question">(1 - i)^8</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: 16(cos(2π) + i·sin(2π)) = 16</p>
+                                <div class="steps">
+                                    <p>1. Convert to polar form</p>
+                                    <p>2. |1 - i| = √2</p>
+                                    <p>3. arg(1 - i) = -π/4</p>
+                                    <p>4. Use DeMoivre's formula</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quadratic-equations">
+            <div class="container">
+                <h2>Quadratic Equations <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Solve by Factoring</h3>
+                        <div class="question">x² + 6x + 9 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = -3 (double root)</p>
+                                <div class="steps">
+                                    <p>1. Factor perfect square: (x + 3)² = 0</p>
+                                    <p>2. Take square root: x + 3 = 0</p>
+                                    <p>3. Solve: x = -3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Solve Using Quadratic Formula</h3>
+                        <div class="question">2x² - 7x + 3 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 3 or x = 1/2</p>
+                                <div class="steps">
+                                    <p>1. Identify a = 2, b = -7, c = 3</p>
+                                    <p>2. Use quadratic formula: x = [-(-7) ± √(49 - 24)]/4</p>
+                                    <p>3. Simplify: x = (7 ± √25)/4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve by Completing the Square</h3>
+                        <div class="question">x² - 6x + 5 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 1 or x = 5</p>
+                                <div class="steps">
+                                    <p>1. Move constant: x² - 6x = -5</p>
+                                    <p>2. Complete square: (x - 3)² - 9 = -5</p>
+                                    <p>3. Solve: (x - 3)² = 4</p>
+                                    <p>4. x - 3 = ±2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Find Complex Solutions</h3>
+                        <div class="question">x² + 4x + 13 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = -2 ± 3i</p>
+                                <div class="steps">
+                                    <p>1. Use quadratic formula with a = 1, b = 4, c = 13</p>
+                                    <p>2. x = [-4 ± √(16 - 52)]/2</p>
+                                    <p>3. x = -2 ± √(-36)/2</p>
+                                    <p>4. x = -2 ± 3i</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the Equation</h3>
+                        <div class="question">x⁴ - 13x² + 36 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = ±2 or x = ±3</p>
+                                <div class="steps">
+                                    <p>1. Let u = x²</p>
+                                    <p>2. u² - 13u + 36 = 0</p>
+                                    <p>3. (u - 4)(u - 9) = 0</p>
+                                    <p>4. u = 4 or u = 9</p>
+                                    <p>5. x = ±2 or x = ±3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve with Parameters</h3>
+                        <div class="question">ax² + bx + c = 0, given b² = 4ac</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = -b/(2a) (double root)</p>
+                                <div class="steps">
+                                    <p>1. Given b² = 4ac means discriminant = 0</p>
+                                    <p>2. This means there is exactly one solution</p>
+                                    <p>3. Use x = -b/(2a)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inequalities">
+            <div class="container">
+                <h2>Inequalities <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Solve the Inequality</h3>
+                        <div class="question">2x + 5 > 13</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x > 4</p>
+                                <div class="steps">
+                                    <p>1. Subtract 5 from both sides: 2x > 8</p>
+                                    <p>2. Divide both sides by 2: x > 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve the Compound Inequality</h3>
+                        <div class="question">-3 ≤ 2x + 1 < 7</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: -2 ≤ x < 3</p>
+                                <div class="steps">
+                                    <p>1. Subtract 1 from all parts: -4 ≤ 2x < 6</p>
+                                    <p>2. Divide all parts by 2: -2 ≤ x < 3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve the Quadratic Inequality</h3>
+                        <div class="question">x² - 5x + 6 > 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x < 2 or x > 3</p>
+                                <div class="steps">
+                                    <p>1. Factor: (x - 2)(x - 3) > 0</p>
+                                    <p>2. Find critical points: x = 2, x = 3</p>
+                                    <p>3. Test intervals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the Rational Inequality</h3>
+                        <div class="question">(x - 1)/(x + 2) > 3</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x < -2 or x > 7</p>
+                                <div class="steps">
+                                    <p>1. Multiply both sides by (x + 2): x - 1 > 3(x + 2)</p>
+                                    <p>2. Distribute: x - 1 > 3x + 6</p>
+                                    <p>3. Solve: -2x > 7</p>
+                                    <p>4. x < -7/2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the Absolute Value Inequality</h3>
+                        <div class="question">|2x - 1| + |x + 3| ≤ 7</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: -4 ≤ x ≤ 2</p>
+                                <div class="steps">
+                                    <p>1. Consider cases based on signs</p>
+                                    <p>2. Solve each case</p>
+                                    <p>3. Combine solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the System of Inequalities</h3>
+                        <div class="question">x² + y² ≤ 25<br>xy ≥ 12</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: Points in first and third quadrants satisfying both conditions</p>
+                                <div class="steps">
+                                    <p>1. Graph circle x² + y² = 25</p>
+                                    <p>2. Graph hyperbola xy = 12</p>
+                                    <p>3. Find intersection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="graphing">
+            <div class="container">
+                <h2>Graphing <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Graph the Line</h3>
+                        <div class="question">y = 2x - 3</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: Line with slope 2 and y-intercept -3</p>
+                                <div class="steps">
+                                    <p>1. Identify slope and y-intercept</p>
+                                    <p>2. Graph line</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Graph the Parabola</h3>
+                        <div class="question">y = x² - 4</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: Parabola with vertex (0, -4) and axis of symmetry x = 0</p>
+                                <div class="steps">
+                                    <p>1. Identify vertex and axis of symmetry</p>
+                                    <p>2. Graph parabola</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Graph the Circle</h3>
+                        <div class="question">x² + y² = 25</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: Circle with center (0, 0) and radius 5</p>
+                                <div class="steps">
+                                    <p>1. Identify center and radius</p>
+                                    <p>2. Graph circle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Graph the Hyperbola</h3>
+                        <div class="question">xy = 12</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: Hyperbola with center (0, 0) and asymptotes y = 0 and x = 0</p>
+                                <div class="steps">
+                                    <p>1. Identify center and asymptotes</p>
+                                    <p>2. Graph hyperbola</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Graph the Function</h3>
+                        <div class="question">f(x) = x³ - 6x² + 11x - 6</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: Graph of cubic function with x-intercepts 1, 2, and 3</p>
+                                <div class="steps">
+                                    <p>1. Factor function: f(x) = (x - 1)(x - 2)(x - 3)</p>
+                                    <p>2. Identify x-intercepts</p>
+                                    <p>3. Graph function</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Graph the Function</h3>
+                        <div class="question">f(x) = 1/(x² + 1)</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: Graph of rational function with horizontal asymptote y = 0</p>
+                                <div class="steps">
+                                    <p>1. Identify horizontal asymptote</p>
+                                    <p>2. Graph function</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="systems-of-equations">
+            <div class="container">
+                <h2>Systems of Equations <span class="lock-icon">🔒</span></h2>
+                <div class="folder-container">
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Solve the System</h3>
+                        <div class="question">x + y = 4<br>x - y = 2</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 3, y = 1</p>
+                                <div class="steps">
+                                    <p>1. Add equations: 2x = 6</p>
+                                    <p>2. Solve for x: x = 3</p>
+                                    <p>3. Substitute x into one of the original equations</p>
+                                    <p>4. Solve for y: y = 1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder easy">
+                        <span class="difficulty">Easy</span>
+                        <h3>Solve the System</h3>
+                        <div class="question">2x + 3y = 12<br>x - 2y = -3</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 3, y = 2</p>
+                                <div class="steps">
+                                    <p>1. Multiply second equation by 2: 2x - 4y = -6</p>
+                                    <p>2. Subtract from first equation: 7y = 18</p>
+                                    <p>3. Solve for y: y = 2</p>
+                                    <p>4. Substitute y into one of the original equations</p>
+                                    <p>5. Solve for x: x = 3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve the System</h3>
+                        <div class="question">x² + y² = 25<br>xy = 12</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: (±3, ±4) and (±4, ±3)</p>
+                                <div class="steps">
+                                    <p>1. Let u = x + y and v = x - y</p>
+                                    <p>2. Then u² + v² = 2(x² + y²) = 50</p>
+                                    <p>3. And uv = x² - y² = 2(xy) = 24</p>
+                                    <p>4. Solve for u and v</p>
+                                    <p>5. Solve for x and y</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder medium">
+                        <span class="difficulty">Medium</span>
+                        <h3>Solve the System</h3>
+                        <div class="question">x + 2y = 7<br>3x - 2y = 5</div>
+                        <div class="small-folder">
+                            <div class="solution">
+                                <p>Solution: x = 3, y = 2</p>
+                                <div class="steps">
+                                    <p>1. Add equations: 4x = 12</p>
+                                    <p>2. Solve for x: x = 3</p>
+                                    <p>3. Substitute x into one of the original equations</p>
+                                    <p>4. Solve for y: y = 2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder hard">
+                        <span class="difficulty">Hard</span>
+                        <h3>Solve the System</h3>
+                        <div class="question">x³ - 6x² + 11x - 6 = 0<br>x² - 4x + 4 = 0</div>
+                        <div class="small-folder">
+                            <div class="solution">
+
+    </main>
+    <script src="../js/content-gate.js"></script>
+    <script src="../js/questions.js" type="module"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
+            const sections = document.querySelectorAll('main section');
+
+            // Remove default active class from home link
+            document.getElementById('home-link').classList.remove('active');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+
+                    // Update active link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // Show/hide sections
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Initial setup: show first section if no section is active
+            if (!document.querySelector('main section.active')) {
+                const firstSection = document.querySelector('main section');
+                if (firstSection) {
+                    firstSection.classList.add('active');
+                    const correspondingLink = document.querySelector(`nav ul li a[href="#${firstSection.id}"]`);
+                    if (correspondingLink) {
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

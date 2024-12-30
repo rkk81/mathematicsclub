@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Test - Mathematics Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <style>
+        .login-required-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .login-message {
+            background: white;
+            padding: 30px 50px;
+            border-radius: 10px;
+            text-align: center;
+            animation: popup 0.3s ease-out;
+        }
+
+        .login-message h2 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .login-message p {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .redirect-timer {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .redirect-timer span {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        @keyframes popup {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-3d"></div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-3d">
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#subjects">Subjects</a></li>
+                    <li><a href="../index.html#test">Test</a></li>
+                    <li><a href="olympaid.html">Olympaid Questions</a></li>
+                </ul>
+                <div class="nav-links">
+                    <span id="userInfo" style="display: none;"></span>
+                    <a href="login.html" id="loginButton">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Test Section -->
+    <section class="test-section">
+        <div class="container">
+            <div class="card-3d">
+                <h2>Mathematics Test</h2>
+                <p>Test your mathematics knowledge with our comprehensive question bank.</p>
+                
+                <!-- Test Categories -->
+                <div class="test-categories">
+                    <div class="category-card">
+                        <h3>Class 9 Tests</h3>
+                        <ul>
+                            <li><a href="#">Algebra Basics</a></li>
+                            <li><a href="#">Geometry Fundamentals</a></li>
+                            <li><a href="#">Number Systems</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h3>Class 10 Tests</h3>
+                        <ul>
+                            <li><a href="#">Polynomials</a></li>
+                            <li><a href="#">Coordinate Geometry</a></li>
+                            <li><a href="#">Trigonometry</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h3>Class 11 Tests</h3>
+                        <ul>
+                            <li><a href="#">Sets and Relations</a></li>
+                            <li><a href="#">Complex Numbers</a></li>
+                            <li><a href="#">Calculus Introduction</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <h3>Class 12 Tests</h3>
+                        <ul>
+                            <li><a href="#">Matrices</a></li>
+                            <li><a href="#">Integration</a></li>
+                            <li><a href="#">Probability</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-3d">
+        <div class="container footer-content">
+            <p>&copy; 2023 Mathematics Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/3d-effects.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/auth-check.js"></script>
+    <script>
+        // Check login status and update navigation
+        function updateNavigation() {
+            const userInfo = document.getElementById('userInfo');
+            const loginButton = document.getElementById('loginButton');
+            
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                const username = localStorage.getItem('username');
+                userInfo.textContent = `Welcome, ${username}`;
+                userInfo.style.display = 'inline';
+                loginButton.textContent = 'Logout';
+                loginButton.onclick = handleLogout;
+            } else {
+                userInfo.style.display = 'none';
+                loginButton.textContent = 'Login';
+                loginButton.onclick = null;
+            }
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        }
+        
+        document.addEventListener('DOMContentLoaded', updateNavigation);
+    </script>
+</body>
+</html>
